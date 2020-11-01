@@ -180,8 +180,8 @@ export const isInContainer = (el, container) => {
   ) {
     containerRect = {
       top: 0,
-      right: window.innerWidth,
-      bottom: window.innerHeight,
+      right: 0, // window.innerWidth
+      bottom: 0, // window.innerWidth
       left: 0
     };
   } else {
