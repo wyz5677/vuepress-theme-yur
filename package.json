@@ -22,10 +22,10 @@
     "yur/"
   ],
   "scripts": {
-    "build": "vuepress build docs",
-    "dev": "vuepress dev docs",
+    "build": "vuepress build vuepress",
+    "dev": "vuepress dev vuepress",
     "lint": "eslint --ext .js,.vue yur",
-    "serve": "vuepress serve docs"
+    "serve": "vuepress serve vuepress"
   },
   "dependencies": {
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",

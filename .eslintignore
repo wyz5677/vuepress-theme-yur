@@ -1,3 +1,4 @@
 node_modules
 yur/templates
-docs
+vuepress
+public

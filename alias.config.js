@@ -11,7 +11,7 @@ module.exports = {
   resolve: {
     alias: {
       "@theme": resolve("./yur"),
-      "@us": resolve("./docs")
+      "@us": resolve("./vuepress")
     }
   }
 };
