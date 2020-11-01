@@ -1,5 +1,7 @@
 <template>
-  <div>tags</div>
+  <div>
+    page
+  </div>
 </template>
 
 <script>

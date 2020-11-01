@@ -1,36 +1,36 @@
 const path = require("path");
 
-module.exports = (opts, ctx) => {
-  const { sep } = path;
+module.exports = (options, ctx) => {
   const { themeConfig, sourceDir } = ctx;
-  const { cdn, hostname, menuCategories } = themeConfig;
+  const { cdn, hostname } = themeConfig;
 
   const blog = {
+    permalink: "/:regular",
     directories: [],
     frontmatters: [
-      // {
-      //   id: "tags",
-      //   keys: ["tags"],
-      //   path: "/tags/",
-      //   layout: "Tags",
-      //   scopeLayout: "Tag"
-      // }
+      {
+        id: "tags",
+        keys: ["tags"],
+        path: "/tag/",
+        layout: "Tags",
+        scopeLayout: "Tag"
+      },
+      {
+        id: "categories",
+        keys: ["categories"],
+        path: "/categories/",
+        layout: "Categories",
+        scopeLayout: "Category"
+      },
+      {
+        id: "timeline",
+        keys: ["timeline"],
+        path: "/timeline/",
+        layout: "Timeline",
+        scopeLayout: "Timeline"
+      }
     ]
   };
-  if (menuCategories && menuCategories.length) {
-    menuCategories.map(menuCategory => {
-      const { link } = menuCategory;
-      if (link) {
-        blog.directories.push({
-          id: link,
-          dirname: link,
-          path: `/${link}/`,
-          layout: "Categories",
-          itemPermalink: "/:regular"
-        });
-      }
-    });
-  }
   if (hostname) {
     blog.sitemap = {
       hostname
@@ -40,7 +40,12 @@ module.exports = (opts, ctx) => {
   return {
     name: "vuepress-theme-yur",
     enhanceAppFiles: [path.resolve(__dirname, "enhanceApp.js")],
-    chainWebpack(config, isServer) {
+    alias() {
+      return {
+        "@us": `${sourceDir}${path.sep}.vuepress${path.sep}styles`
+      };
+    },
+    chainWebpack(config) {
       config.module
         .rule("less")
         .oneOf("normal")
@@ -66,11 +71,6 @@ module.exports = (opts, ctx) => {
       if (typeof cdn === "string" && process.env.NODE_ENV === "production") {
         config.output.publicPath(cdn);
       }
-    },
-    alias() {
-      return {
-        "@us": `${sourceDir}${sep}.vuepress${sep}styles`
-      };
     },
     plugins: [
       ["@vuepress/blog", blog],

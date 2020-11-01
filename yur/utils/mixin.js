@@ -1,6 +1,4 @@
-import Vue from "vue";
-
-export default () => {
+export default function Mixin(Vue) {
   Vue.mixin({
     computed: {
       $lang() {
@@ -16,16 +14,6 @@ export default () => {
         return this.$l("description");
       }
     },
-    methods: {
-      /**
-       * Simplified hasOwnProperty()
-       * @param obj
-       * @param key
-       * @returns {boolean}
-       */
-      hasOwn(obj, key) {
-        return Object.prototype.hasOwnProperty.call(obj, key);
-      }
-    }
+    methods: {}
   });
-};
+}

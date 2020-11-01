@@ -15,7 +15,6 @@ export default {
       default: undefined
     }
   },
-  // eslint-disable-next-line vue/require-render-return
   render(h, { data, props, parent }) {
     if (parent._isMounted) {
       return h(
@@ -39,6 +38,7 @@ export default {
       parent.$once("hook:mounted", () => {
         parent.$forceUpdate();
       });
+      return false;
     }
   }
 };

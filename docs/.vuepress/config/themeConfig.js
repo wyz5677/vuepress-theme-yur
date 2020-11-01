@@ -8,19 +8,7 @@ module.exports = {
     width: "36px",
     height: "26px"
   },
-  about: true,
-  menuCategories: [
-    {
-      text: "编程技术",
-      link: "program"
-    },
-    {
-      text: "其它",
-      link: "other"
-    }
-  ],
-  // postCover: [],
-  cdn: true,
+  nav: [{ text: "test", link: "/test/" }],
   beiAn: "粤 ICP 备 17075980 号 - 4",
   hostname: "https://blog.cnguu.cn",
   reward: [

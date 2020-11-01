@@ -13,6 +13,5 @@ module.exports = {
   },
   host: "localhost",
   port: 2234,
-  dest: "public",
-  extraWatchFiles: ["./config/plugins.js", "./config/themeConfig.js"]
+  dest: "public"
 };
