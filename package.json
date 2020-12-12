@@ -17,37 +17,51 @@
   },
   "license": "MIT",
   "author": "cnguu <www@cnguu.cn>",
-  "main": "./yur/index.js",
+  "main": "./yur/index.ts",
   "files": [
     "yur/"
   ],
   "scripts": {
     "build": "vuepress build vuepress",
     "dev": "vuepress dev vuepress",
-    "lint": "eslint --ext .js,.vue yur",
     "serve": "vuepress serve vuepress"
   },
   "dependencies": {
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
-    "@vue/babel-preset-jsx": "^1.2.4",
-    "@vuepress/plugin-blog": "^1.9.2",
-    "ant-design-vue": "^1.7.1",
-    "core-js": "2.6.11",
-    "less": "^3.12.2",
-    "less-loader": "^5.0.0",
-    "resize-observer-polyfill": "^1.5.1"
+    "@vue/babel-plugin-jsx": "^1.0.0-rc.5",
+    "@vuepress/bundler-webpack": "^2.0.0-alpha.8",
+    "@vuepress/cli": "^2.0.0-alpha.8",
+    "@vuepress/client": "^2.0.0-alpha.7",
+    "@vuepress/core": "^2.0.0-alpha.8",
+    "@vuepress/plugin-active-header-links": "^1.7.1",
+    "@vuepress/plugin-container": "^2.0.0-alpha.8",
+    "@vuepress/plugin-debug": "^2.0.0-alpha.8",
+    "@vuepress/plugin-git": "^2.0.0-alpha.8",
+    "@vuepress/shared": "^2.0.0-alpha.7",
+    "@vuepress/utils": "^2.0.0-alpha.7",
+    "less": "^3.13.0",
+    "less-loader": "^7.1.0",
+    "prismjs": "^1.22.0",
+    "vue": "^3.0.4",
+    "vue-router": "^4.0.1"
   },
   "devDependencies": {
-    "@vue/eslint-config-prettier": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
     "babel-eslint": "^10.1.0",
-    "babel-plugin-import": "^1.13.1",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-vue": "^6.2.2",
-    "prettier": "^1.19.1",
-    "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.7.1",
-    "vuepress-plugin-container": "^2.1.5",
-    "vuepress-plugin-serve": "^2.0.4"
-  }
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "typescript": "^4.1.3"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ]
 }

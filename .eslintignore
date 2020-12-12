@@ -1,4 +1,9 @@
 node_modules
 yur/templates
-vuepress
 public
+node_modules/
+.temp/
+lib/
+dist/
+!.vuepress/
+!.*.js

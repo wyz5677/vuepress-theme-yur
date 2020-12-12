@@ -31,7 +31,7 @@ A clear and concise description of what you expected to happen.
 ## Environment (please complete the following information):
 
  - Theme Version: [e.g. v4.0.0]
- - Vuepress Version: [e.g. v1.7.1]
+ - Vuepress Version: [e.g. v2.0.0]
  - OS: [e.g. Windows 10, iOS, Android]
  - Browser: [e.g. chrome 74]
 
