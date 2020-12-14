@@ -2,7 +2,6 @@ import type { Theme } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import {
   assignDefaultOptions,
-  resolveActiveHeaderLinksPluginOptions,
   resolveContainerPluginOptions,
   resolveContainerPluginOptionsForDetails,
   resolveDebugPluginOptions,
@@ -52,7 +51,7 @@ export const defaultTheme: Theme<DefaultThemeOptions> = (options, app) => {
         .options({
           babelrc: false,
           configFile: false,
-          presets: [require.resolve("@vue/babel-preset-jsx")],
+          presets: ["@vue/babel-preset-jsx"],
         });
     },
 
@@ -60,10 +59,6 @@ export const defaultTheme: Theme<DefaultThemeOptions> = (options, app) => {
     extendsPageData: ({ filePathRelative }) => ({ filePathRelative }),
 
     plugins: [
-      [
-        "@vuepress/active-header-links",
-        resolveActiveHeaderLinksPluginOptions(options),
-      ],
       ["@vuepress/container", resolveContainerPluginOptions(options, "tip")],
       [
         "@vuepress/container",

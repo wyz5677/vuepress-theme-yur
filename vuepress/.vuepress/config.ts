@@ -1,7 +1,7 @@
-import type { UserConfig } from "@vuepress/cli";
+import { path } from "@vuepress/utils";
 import { navbar, sidebar } from "./configs";
 
-const config: UserConfig = {
+const config = {
   base: "/",
 
   evergreen: process.env.NODE_ENV !== "production",
@@ -21,6 +21,8 @@ const config: UserConfig = {
       description: "Vue 驱动的静态网站生成器",
     },
   },
+
+  theme: path.resolve(__dirname, "../../yur"),
 
   themeConfig: {
     logo: "/hero.png",

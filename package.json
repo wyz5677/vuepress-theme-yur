@@ -32,7 +32,6 @@
     "@vuepress/cli": "^2.0.0-alpha.8",
     "@vuepress/client": "^2.0.0-alpha.7",
     "@vuepress/core": "^2.0.0-alpha.8",
-    "@vuepress/plugin-active-header-links": "^1.7.1",
     "@vuepress/plugin-container": "^2.0.0-alpha.8",
     "@vuepress/plugin-debug": "^2.0.0-alpha.8",
     "@vuepress/plugin-git": "^2.0.0-alpha.8",
