@@ -14,11 +14,6 @@ export interface DefaultThemeOptions
     activeHeaderLinks?: boolean;
 
     /**
-     * Enable @vuepress/plugin-back-to-top or not
-     */
-    backToTop?: boolean;
-
-    /**
      * Enable @vuepress/plugin-debug or not
      */
     debug?: boolean;
@@ -37,16 +32,6 @@ export interface DefaultThemeOptions
      * Enable @vuepress/plugin-git or not
      */
     git?: boolean;
-
-    /**
-     * Enable @vuepress/plugin-medium-zoom or not
-     */
-    mediumZoom?: boolean;
-
-    /**
-     * Enable @vuepress/plugin-nprogress or not
-     */
-    nprogress?: boolean;
   };
 }
 
