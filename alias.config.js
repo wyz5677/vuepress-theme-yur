@@ -5,7 +5,8 @@
 
 "use strict";
 
-const resolve = (dir) => require("path").join(__dirname, dir);
+import { join } from "path";
+const resolve = (dir) => join(__dirname, dir);
 
 module.exports = {
   resolve: {

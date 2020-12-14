@@ -13,11 +13,8 @@ import type { DefaultThemeOptions } from "./types";
 export * from "./node";
 export * from "./types";
 
-export const defaultTheme: Theme<DefaultThemeOptions> = (options, app, ctx) => {
+export const defaultTheme: Theme<DefaultThemeOptions> = (options, app) => {
   assignDefaultOptions(options);
-
-  const { themeConfig, sourceDir } = ctx;
-  const { cdn } = themeConfig;
 
   return {
     name: "vuepress-theme-yur",
@@ -30,7 +27,8 @@ export const defaultTheme: Theme<DefaultThemeOptions> = (options, app, ctx) => {
 
     alias() {
       return {
-        "@us": `${sourceDir}${path.sep}.vuepress${path.sep}styles`,
+        "@theme": app.dir.source(),
+        "@us": app.dir.temp(),
       };
     },
 
@@ -56,10 +54,6 @@ export const defaultTheme: Theme<DefaultThemeOptions> = (options, app, ctx) => {
           configFile: false,
           presets: [require.resolve("@vue/babel-preset-jsx")],
         });
-
-      if (typeof cdn === "string" && process.env.NODE_ENV === "production") {
-        config.output.publicPath(cdn);
-      }
     },
 
     // use the relative file path to generate edit link
