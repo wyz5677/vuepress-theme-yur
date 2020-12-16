@@ -1,5 +1,4 @@
 import { useResolveRouteWithRedirect } from "./useResolveRouteWithRedirect";
-import type { NavLink } from "../types";
 
 /**
  * Resolve NavLink props from string
@@ -8,7 +7,7 @@ import type { NavLink } from "../types";
  * - Input: '/README.md'
  * - Output: { text: 'Home', link: '/' }
  */
-export const useNavLink = (item: string): NavLink => {
+export const useNavLink = (item) => {
   const resolved = useResolveRouteWithRedirect(item);
   return {
     text: resolved.meta.title || item,

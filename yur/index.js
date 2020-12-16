@@ -1,4 +1,3 @@
-import type { Theme } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import {
   assignDefaultOptions,
@@ -7,12 +6,8 @@ import {
   resolveDebugPluginOptions,
   resolveGitPluginOptions,
 } from "./node";
-import type { DefaultThemeOptions } from "./types";
 
-export * from "./node";
-export * from "./types";
-
-export const defaultTheme: Theme<DefaultThemeOptions> = (options, app) => {
+export const defaultTheme = (options, app) => {
   assignDefaultOptions(options);
 
   return {

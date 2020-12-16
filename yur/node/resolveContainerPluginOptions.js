@@ -1,22 +1,22 @@
-import type { ContainerPluginOptions } from "@vuepress/plugin-container";
-import type { DefaultThemeOptions } from "../types";
-
 /**
  * Resolve options for @vuepress/plugin-container
  *
  * For custom blocks default title
  */
-export const resolveContainerPluginOptions = (
-  options: DefaultThemeOptions,
-  type: "tip" | "warning" | "danger"
-): ContainerPluginOptions | boolean => {
-  if (options.themePlugins?.container?.[type] === false) {
+export const resolveContainerPluginOptions = (options, type) => {
+  if (
+    ((options.themePlugins ? options.themePlugins.container : undefined)
+      ? (options.themePlugins ? options.themePlugins.container : undefined)[
+          type
+        ]
+      : undefined) === false
+  ) {
     return false;
   }
 
   const locales = Object.entries(options.locales || {}).reduce(
     (result, [key, value]) => {
-      const defaultInfo = value?.[type];
+      const defaultInfo = value ? value[type] : undefined;
       if (defaultInfo) {
         result[key] = {
           defaultInfo,
@@ -38,10 +38,13 @@ export const resolveContainerPluginOptions = (
  *
  * For details block
  */
-export const resolveContainerPluginOptionsForDetails = (
-  options: DefaultThemeOptions
-): ContainerPluginOptions | boolean => {
-  if (options.themePlugins?.container?.details === false) {
+export const resolveContainerPluginOptionsForDetails = (options) => {
+  if (
+    ((options.themePlugins ? options.themePlugins.container : undefined)
+      ? (options.themePlugins ? options.themePlugins.container : undefined)
+          .details
+      : undefined) === false
+  ) {
     return false;
   }
 

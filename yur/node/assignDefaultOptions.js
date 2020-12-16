@@ -1,6 +1,4 @@
-import type { DefaultThemeOptions, DefaultThemeLocaleData } from "../types";
-
-const defaultLocaleData: DefaultThemeLocaleData = {
+const defaultLocaleData = {
   // navbar
   navbar: [],
   logo: null,
@@ -41,7 +39,7 @@ const defaultLocaleData: DefaultThemeLocaleData = {
 /**
  * Assign default options to `themeConfig`
  */
-export const assignDefaultOptions = (options: DefaultThemeOptions): void => {
+export const assignDefaultOptions = (options) => {
   Object.assign(options, {
     ...defaultLocaleData,
     ...options,

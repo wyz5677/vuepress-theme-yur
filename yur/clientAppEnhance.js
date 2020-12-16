@@ -1,9 +1,8 @@
-import type { ClientAppEnhance } from "@vuepress/client";
 import Badge from "./components/global/Badge";
 
 import "./styles/index.less";
 
-const clientAppEnhance: ClientAppEnhance = ({ app }) => {
+const clientAppEnhance = ({ app }) => {
   app.component("Badge", Badge);
 };
 

@@ -12,16 +12,10 @@ export const resolveEditLink = ({
   docsDir,
   filePathRelative,
   editLinkPattern,
-}: {
-  docsRepo: string;
-  docsBranch: string;
-  docsDir: string;
-  filePathRelative: string;
-  editLinkPattern?: string;
-}): string | null => {
+}) => {
   const repoType = resolveRepoType(docsRepo);
 
-  let pattern: string | null = null;
+  let pattern = null;
 
   if (editLinkPattern) {
     pattern = editLinkPattern;
